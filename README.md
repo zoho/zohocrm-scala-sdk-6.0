@@ -46,7 +46,6 @@ For older versions, please [refer](https://github.com/zoho/zohocrm-scala-sdk-6.0
 You can include the SDK to your project using:
 - Maven
 - [Gradle](/versions/1.0.0/README.md#including-the-sdk-in-your-project)
-- [Download SDK jar](https://maven.zohodl.com/com/zoho/crm/zohocrmsdk-6-0/1.0.0/zohocrmsdk-6-0-1.0.0.jar)
 
 For including the latest [version](https://github.com/zoho/zohocrm-java-sdk-6.0/releases/tag/1.0.0) using Maven, include the following in your **pom.xml** file, which will get created once your **Java** project is created using Maven.
 
