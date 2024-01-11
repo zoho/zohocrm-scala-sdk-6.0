@@ -216,7 +216,7 @@ class CommonAPIHandler {
       val mimeType = contentType.getMimeType
       convertInstance = getConverterClassInstance(mimeType.toLowerCase)
       val returnObject: Option[Model] = convertInstance.getWrappedResponse(response, pack).asInstanceOf[Option[Model]]
-      if (returnObject.isDefined) if (pack.equals(returnObject.get.getClass.getCanonicalName) || isExpectedType(returnObject.get, pack)) isModel = true
+      if (returnObject != null && returnObject.isDefined) if (pack.equals(returnObject.get.getClass.getCanonicalName) || isExpectedType(returnObject.get, pack)) isModel = true
       Option(new APIResponse[A](headerHashMap, statusCode, returnObject.getOrElse(None), isModel))
     } catch {
       case e: SDKException =>

@@ -30,7 +30,7 @@ class TextConverter(commonAPIHandler: CommonAPIHandler) extends Converter(common
       val responseObject = EntityUtils.toString(responseEntity)
       return Option(getResponse(responseObject, pack))
     }
-    null
+    None
   }
 
   @throws[Exception]
@@ -38,7 +38,7 @@ class TextConverter(commonAPIHandler: CommonAPIHandler) extends Converter(common
     val classDetail = Initializer.jsonDetails.getJSONObject(packageName)
     val responseString = response.toString
     if (responseString == null || responseString == "null" || responseString.isEmpty || responseString.trim.isEmpty) return null
-    var instance: Any = null
+    var instance: Any = None
     val constructor = Class.forName(packageName).getDeclaredConstructors()(0)
     if (Modifier.isPrivate(constructor.getModifiers)) constructor.setAccessible(true)
     instance = constructor.newInstance()
@@ -47,7 +47,7 @@ class TextConverter(commonAPIHandler: CommonAPIHandler) extends Converter(common
       val memberName = classDetailKeys.next()
       val keyDetail = classDetail.getJSONObject(memberName)
       val keyName = if (keyDetail.has(Constants.NAME)) keyDetail.getString(Constants.NAME)
-      else null
+      else None
       if (keyName != null) {
         val member = instance.getClass.getDeclaredField(memberName)
         member.setAccessible(true)

@@ -688,7 +688,7 @@ object  Utility {
     }
     if(apiType.toLowerCase().equalsIgnoreCase(Constants.MULTI_SELECT_LOOKUP)) {
 			fieldDetail.put(Constants.SKIP_MANDATORY, true)
-			if(field.getMultiselectlookup() != null) {
+			if(field.getMultiselectlookup() != null && field.getMultiselectlookup().isDefined) {
 				if(field.getMultiselectlookup().get.getLinkingModule() != null) {
 					val linkingModule = field.getMultiselectlookup().get.getLinkingModule()
 					fieldDetail.put(Constants.MODULE, linkingModule.get.getAPIName())
@@ -699,7 +699,7 @@ object  Utility {
 		}
 		if(apiType.toLowerCase().equalsIgnoreCase(Constants.MULTI_USER_LOOKUP)) {
 			fieldDetail.put(Constants.SKIP_MANDATORY, true)
-			if(field.getMultiuserlookup() != null) {
+			if(field.getMultiuserlookup() != null && field.getMultiuserlookup().isDefined) {
 				if(field.getMultiuserlookup().get.getLinkingModule() != null) {
 					val linkingModule = field.getMultiuserlookup().get.getLinkingModule()
 					fieldDetail.put(Constants.MODULE, linkingModule)
@@ -729,7 +729,7 @@ object  Utility {
       fieldDetail.put(Constants.SKIP_MANDATORY, true)
       fieldDetail.put(Constants.SUBFORM, true)
     }
-    if (apiType.equalsIgnoreCase(Constants.LOOKUP) && field.getLookup() != null) {
+    if (apiType.equalsIgnoreCase(Constants.LOOKUP) && field.getLookup() != null && field.getLookup().isDefined) {
       val module1 = field.getLookup().get.getModule().orNull
       if (module1 != null && !module1.getAPIName().get.equalsIgnoreCase(Constants.SE_MODULE)) {
         module.setAPIName(module1.getAPIName())
