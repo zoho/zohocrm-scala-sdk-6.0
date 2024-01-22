@@ -68,7 +68,7 @@ Scala SDK requires java (version 11 and above) and scala version 2.13 and above 
 Scala SDK is available through Maven distribution. You can include the SDK to your project using:
 1. Build.sbt
     ```
-    libraryDependencies ++= Seq( "com.zoho.crm" % "zohocrmsdk-6-0" % "1.x.x")
+    libraryDependencies ++= Seq( "com.zoho.crm" % "zohocrmsdk-6-0" % "1.0.0")
     ```
 2. Maven
 
@@ -90,11 +90,9 @@ Scala SDK is available through Maven distribution. You can include the SDK to yo
     ```gradle
  
     dependencies{
-        implementation 'com.zoho.crm:zohocrmsdk-6-0:1.x.x'
+        implementation 'com.zoho.crm:zohocrmsdk-6-0:1.0.0'
     }
      ```
-
-4. Downloadable JARs ([by Zoho](https://www.zoho.com/sites/default/files/crm/zohocrmsdk-6-0-1.0.0.zip))
  
 
 ### Dependency JARs
