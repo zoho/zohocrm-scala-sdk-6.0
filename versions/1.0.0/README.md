@@ -93,7 +93,6 @@ Scala SDK is available through Maven distribution. You can include the SDK to yo
         implementation 'com.zoho.crm:zohocrmsdk-6-0:1.0.0'
     }
      ```
- 
 
 ### Dependency JARs
 
@@ -111,6 +110,9 @@ Scala SDK is available through Maven distribution. You can include the SDK to yo
 
 [mysql-connector-java-8.0.19.jar](https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.19)
 
+## Token Persistence
+
+Token persistence refers to storing and utilizing the authentication tokens that are provided by Zoho. Token persistence enables the SDK to automatically refresh the access token after initialization using the refresh token without the need for user intervention. There are three ways provided by the SDK in which persistence can be utilized. They are DataBase Persistence, File Persistence, and Custom Persistence. Please note that the default method of token persistence provided by the Zoho CRM SDK is File persistence.
 
 ### Table of Contents
 
